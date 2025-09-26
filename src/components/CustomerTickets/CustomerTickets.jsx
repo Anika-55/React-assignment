@@ -22,8 +22,6 @@ const CustomerTickets = ({ fetchPromise , setInProgress, setResolved}) => {
     setResolved(prev => prev + 1);
     alert("✅ Task Completed!");
   };
-
-
   return (
     <Container>
       <div className="flex justify-between gap-4">
