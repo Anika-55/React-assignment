@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import CountBox from './components/CountBox/CountBox'
 import CustomerTickets from './components/CustomerTickets/CustomerTickets'
@@ -11,24 +11,20 @@ const fetchIssues = async () => {
 
 }
 
-function App({selectedTicket}) {
+function App() {
   const fetchPromise = fetchIssues();
-  // const [selectedTicket, setSelectedTicket] = useState(Issues);
-  // console.log(Issues)
-
-
+    const [inProgressCount, setInProgressCount] = useState(0);
+    const [resolvedCount, setResolvedCount] = useState(0);
   
   return (
     <>
-       <Navbar></Navbar>
-      <CountBox selectedTicket={selectedTicket}></CountBox>
+      <Navbar></Navbar>
+      <CountBox inProgress={inProgressCount} resolved={resolvedCount}></CountBox>
       
-      <Suspense fallback={<h3>Loading....</h3>}>
-    <CustomerTickets   fetchPromise={fetchPromise} ></CustomerTickets>
+      <Suspense fallback={<h3>loading...</h3>}>
+    <CustomerTickets setInProgress={setInProgressCount} setResolved={setResolvedCount}  fetchPromise={fetchPromise} ></CustomerTickets>
       </Suspense>
-       
       <Footer></Footer>
-   
     </>
   )
 }

@@ -49,11 +49,15 @@ const Footer = () => {
               <div>
                 
                    <ul className="space-y-1 text-sm">
-                  <div className='flex '>
-                    <li> <img src={X_Img} className='w-[12px] h-[12px] bg-white rounded-2xl' alt="" />@CS - Ticket System</li>
-               
-              </div>
-              <li> <img src={In_Img} className='w-[12px] h-[12px] bg-white rounded-2xl' alt="" />@CS - Ticket System</li>
+                  <div className='flex flex-row '>
+                    <img src={X_Img} className='w-[12px] h-[12px] bg-white rounded-2xl mr-1' alt="" />
+                    <li> @CS - Ticket System</li>
+                  </div>
+                  <div>
+                    <img src={In_Img} className='w-[12px] h-[12px] bg-white rounded-2xl' alt="" />
+                <li> @CS - Ticket System</li>
+                  </div>
+              
               <li>@CS - Ticket System</li>
               <li>support@cst.com</li>
             </ul>
