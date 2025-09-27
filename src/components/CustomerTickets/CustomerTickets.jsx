@@ -12,6 +12,7 @@ const CustomerTickets = ({ fetchPromise , setInProgress, setResolved}) => {
     if (!selectedTickets.some(ticket => ticket.id === issue.id)) {
       setSelectedTickets([...selectedTickets, issue]);
       setInProgress(prev => prev + 1); 
+      alert("✅ Task Added!");
     }
   };
 
